@@ -1,7 +1,9 @@
+import java.util.Arrays;
+
 class stuff {
-  class static void main(String[] args){
-    String[] board = new String(81);
-    for(int i; i < board.length; i++){
+  public static void main(String args[]){
+    String[] board = new String[81];
+    for(int i = 0; i < board.length; i++){
       board[i] = "empty";
       System.out.println(board[i]);
     }
