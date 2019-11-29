@@ -1,10 +1,12 @@
 import java.util.Arrays;
+import java.util.Random;
 
-class stuff {
+public class sodoku {
   public static void main(String args[]){
-    String[] board = new String[81];
+    int[] board = new int[81];
     for(int i = 0; i < board.length; i++){
-      board[i] = "empty";
+      Random r = new Random();
+      board[i] = r.nextInt((9 - 1) + 1) + 1;
       System.out.println(board[i]);
     }
   }
