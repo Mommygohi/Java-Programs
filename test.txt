@@ -1,9 +1,9 @@
-while(true){
-            if(){
-               int userRow;
-               char userCol;
-               int userNum;
-            } else {
-                System.out.println("YOU WIN!");
-                break;
-            }
+if(board != answerBoard){
+            int userRow = 2;
+            char userCol = 'A';
+            int userNum = 1;
+            board = updateBoard(board, userRow, userCol, userNum);
+            printBoard(board);
+        } else {
+            System.out.println("YOU WIN!");
+        }
