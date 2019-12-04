@@ -1,16 +1,8 @@
 while(true){
-            if(board != answerBoard){
-                Scanner myObj = new Scanner(System.in);
-                System.out.println("Enter Row(Number)");
-            
-                
-                int userRow;
-                char userCol;
-                int userNum;
-            } else {
-                System.out.println("YOU WIN!");
-                break;
-            }
+            int userRow;
+            char userCol;
+            int userNum;
+        } else {
+            System.out.println("YOU WIN!");
+            break;
         }
-        
-https://www.w3schools.com/java/java_user_input.asp
