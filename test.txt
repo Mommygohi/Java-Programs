@@ -1,8 +1,9 @@
 while(true){
-            int userRow;
-            char userCol;
-            int userNum;
-        } else {
-            System.out.println("YOU WIN!");
-            break;
-        }
+            if(){
+               int userRow;
+               char userCol;
+               int userNum;
+            } else {
+                System.out.println("YOU WIN!");
+                break;
+            }
