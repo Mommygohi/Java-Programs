@@ -15,6 +15,20 @@ public class sodoku{
     }
     
     private static Object[][] updateBoard(Object[][] board, int row, char col, int newNum){
+        if(row < 0 || row > 9){
+            System.out.println("");
+            System.out.println("Invalid Row Value");
+            return board;
+        } else if(newNum < 0 || newNum > 9){
+            System.out.println("");
+            System.out.println("Invalid Replacement Value");
+            return board;
+        } else if(col != 'A' && col != 'B' && col != 'C' && col != 'D' && col != 'E' && col != 'F' && col != 'G' && col != 'H' && col != 'I'){
+            System.out.println("");
+            System.out.println("Invalid Column Value");
+            return board;
+        }
+        
         int actualCol = 0;
         switch(col){
             case 'B':
@@ -70,9 +84,8 @@ public class sodoku{
             new Object[]{"@","@","@","@",8,"@","@",7,9}
         };
         printBoard(board);
-        /*Testing
+        
         board = updateBoard(board, 0, 'A', 0);
         printBoard(board);
-        */
      }
 }
