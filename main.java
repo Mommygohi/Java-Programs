@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Scanner;
 /*
 https://en.wikipedia.org/wiki/Sudoku
 */
@@ -70,8 +71,9 @@ public class sodoku{
             new Object[]{"@","@","@","@",8,"@","@",7,9}
         };
         printBoard(board);
-        //Testing
+        /*Testing
         board = updateBoard(board, 0, 'A', 0);
         printBoard(board);
+        */
      }
 }
