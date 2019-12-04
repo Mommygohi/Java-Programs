@@ -1,5 +1,4 @@
 import java.util.Arrays;
-import java.util.Scanner;
 /*
 https://en.wikipedia.org/wiki/Sudoku
 */
