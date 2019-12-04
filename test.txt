@@ -1,0 +1,15 @@
+while(true){
+            if(board != answerBoard){
+                Scanner myObj = new Scanner(System.in);
+                System.out.println("Enter Row(Number)");
+            
+                
+                int userRow;
+                char userCol;
+                int userNum;
+            } else {
+                System.out.println("YOU WIN!");
+                break;
+            }
+        }
+        
