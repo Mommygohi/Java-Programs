@@ -6,13 +6,16 @@ https://en.wikipedia.org/wiki/Sudoku
 public class sodoku{
     private static void printBoard(Object[][] board){
         System.out.println("");
+        System.out.println("    A B C D E F G H I");
+        System.out.println("   -------------------");
         for(int i = 0; i < board.length; i++){
-            String line = "";
+            String line = i + " | ";
             for(int j = 0; j < board[i].length; j++){
                 line += board[i][j] + " ";
             }
             System.out.println(line);
         }
+        System.out.println("");
     }
     
     private static Object[][] updateBoard(Object[][] board, int row, String col, int newNum){
@@ -74,40 +77,38 @@ public class sodoku{
             new Object[]{3,4,5,2,8,6,1,7,9}
         };
         Object[][] board = {
-            new Object[]{5,3,"@","@",7,"@","@","@","@"},
-            new Object[]{6,"@","@",1,9,5,"@","@","@"},
-            new Object[]{"@",9,8,"@","@","@","@",6,"@"},
-            new Object[]{8,"@","@","@",6,"@","@","@",3},
-            new Object[]{4,"@","@",8,"@",3,"@","@",1},
-            new Object[]{7,"@","@","@",2,"@","@","@",6},
-            new Object[]{"@",6,"@","@","@","@",2,8,"@"},
-            new Object[]{"@","@","@",4,1,9,"@","@",5},
-            new Object[]{"@","@","@","@",8,"@","@",7,9}
+            new Object[]{5,3,"#","#",7,"#","#","#","#"},
+            new Object[]{6,"#","#",1,9,5,"#","#","#"},
+            new Object[]{"#",9,8,"#","#","#","#",6,"#"},
+            new Object[]{8,"#","#","#",6,"#","#","#",3},
+            new Object[]{4,"#","#",8,"#",3,"#","#",1},
+            new Object[]{7,"#","#","#",2,"#","#","#",6},
+            new Object[]{"#",6,"#","#","#","#",2,8,"#"},
+            new Object[]{"#","#","#",4,1,9,"#","#",5},
+            new Object[]{"#","#","#","#",8,"#","#",7,9}
         };
         printBoard(board);
-        if(board != answerBoard){
-            //user input row
-            Scanner myObj = new Scanner(System.in);
-            System.out.println("Enter Row");
-            int userRow = myObj.nextInt();
-            //user input col
-            Scanner myObj2 = new Scanner(System.in);
-            System.out.println("Enter Column");
-            String userCol = myObj2.nextLine();
-            //user input num
-            Scanner myObj3 = new Scanner(System.in);
-            System.out.println("Enter New Number");
-            int userNum = myObj3.nextInt();
-
-            board = updateBoard(board, userRow, userCol, userNum);
-            printBoard(board);
-        } else {
-            System.out.println("YOU WIN!");
+        while(true){
+            if(board != answerBoard){
+                //user input row
+                Scanner myObj = new Scanner(System.in);
+                System.out.println("Enter Row");
+                int userRow = myObj.nextInt();
+                //user input col
+                Scanner myObj2 = new Scanner(System.in);
+                System.out.println("Enter Column");
+                String userCol = myObj2.nextLine();
+                //user input num
+                Scanner myObj3 = new Scanner(System.in);
+                System.out.println("Enter New Number");
+                int userNum = myObj3.nextInt();
+    
+                board = updateBoard(board, userRow, userCol, userNum);
+                printBoard(board);
+            } else {
+                System.out.println("YOU WIN!");
+                break;
+            }
         }
-        
-        
-        /*
-        board = updateBoard(board, 0, 'A', 0);
-        printBoard(board);*/
      }
 }
