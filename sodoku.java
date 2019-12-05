@@ -6,12 +6,19 @@ https://en.wikipedia.org/wiki/Sudoku
 public class sodoku{
     private static void printBoard(Object[][] board){
         System.out.println("");
-        System.out.println("    A B C D E F G H I");
+        System.out.println("    A B C  D E F  G H I");
         System.out.println("   -------------------");
         for(int i = 0; i < board.length; i++){
             String line = i + " | ";
+            if(i == 3 || i == 6){
+                System.out.println("");
+            }
             for(int j = 0; j < board[i].length; j++){
-                line += board[i][j] + " ";
+                if(j == 3 || j == 6){
+                    line += " " + board[i][j] + " ";
+                } else {
+                    line += board[i][j] + " ";
+                }
             }
             System.out.println(line);
         }
