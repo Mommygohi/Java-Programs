@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Scanner;
 /*
 https://en.wikipedia.org/wiki/Sudoku
 */
@@ -14,7 +15,7 @@ public class sodoku{
         }
     }
     
-    private static Object[][] updateBoard(Object[][] board, int row, char col, int newNum){
+    private static Object[][] updateBoard(Object[][] board, int row, String col, int newNum){
         if(row < 0 || row > 9){
             System.out.println("");
             System.out.println("Invalid Row Value");
@@ -23,7 +24,7 @@ public class sodoku{
             System.out.println("");
             System.out.println("Invalid Replacement Value");
             return board;
-        } else if(col != 'A' && col != 'B' && col != 'C' && col != 'D' && col != 'E' && col != 'F' && col != 'G' && col != 'H' && col != 'I'){
+        } else if(!("A".equals(col)) && !("B".equals(col)) && !("C".equals(col)) && !("D".equals(col)) && !("E".equals(col)) && !("F".equals(col)) && !("G".equals(col)) && !("H".equals(col)) && !("I".equals(col))){
             System.out.println("");
             System.out.println("Invalid Column Value");
             return board;
@@ -31,28 +32,28 @@ public class sodoku{
         
         int actualCol = 0;
         switch(col){
-            case 'B':
+            case "B":
                 actualCol = 1;
                 break;
-            case 'C':
+            case "C":
                 actualCol = 2;
                 break;
-            case 'D':
+            case "D":
                 actualCol = 3;
                 break;
-            case 'E':
+            case "E":
                 actualCol = 4;
                 break;
-            case 'F':
+            case "F":
                 actualCol = 5;
                 break;
-            case 'G':
+            case "G":
                 actualCol = 6;
                 break;
-            case 'H':
+            case "H":
                 actualCol = 7;
                 break;
-            case 'I':
+            case "I":
                 actualCol = 8;
                 break;
         }
@@ -84,8 +85,29 @@ public class sodoku{
             new Object[]{"@","@","@","@",8,"@","@",7,9}
         };
         printBoard(board);
+        if(board != answerBoard){
+            //user input row
+            Scanner myObj = new Scanner(System.in);
+            System.out.println("Enter Row");
+            int userRow = myObj.nextInt();
+            //user input col
+            Scanner myObj2 = new Scanner(System.in);
+            System.out.println("Enter Column");
+            String userCol = myObj2.nextLine();
+            //user input num
+            Scanner myObj3 = new Scanner(System.in);
+            System.out.println("Enter New Number");
+            int userNum = myObj3.nextInt();
+
+            board = updateBoard(board, userRow, userCol, userNum);
+            printBoard(board);
+        } else {
+            System.out.println("YOU WIN!");
+        }
         
+        
+        /*
         board = updateBoard(board, 0, 'A', 0);
-        printBoard(board);
+        printBoard(board);*/
      }
 }
