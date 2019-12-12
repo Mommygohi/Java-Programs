@@ -4,9 +4,9 @@ import java.util.Random;
 
 public class hangman {
     private static String generatePhrase(){
-        String[] phrases = {"a", "b", "c"};
+        String[] phrases = {"armadillo", "banana", "chocolate"};
         Random rand = new Random();
-        int num = rand.nextInt(2);
+        int num = rand.nextInt(3);
         return phrases[num];
     }
     
